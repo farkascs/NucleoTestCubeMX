@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceFolder}",
+            "executable": "build/NucleoTest.elf",
+            "name": "Debug with JLink",
+            "request": "launch",
+            "type": "cortex-debug",
+            "device": "STM32F446RE",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "none",
+            "preLaunchTask": "Build binary",
+            "servertype": "jlink",
+            "svdFile": "STM32F446.svd"
+        },
+        {
+            "name": "Cortex-Debug (JLink)",
+            "cwd": "${workspaceRoot}",
+            "executable": "build/NucleoTest.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype":"jlink",
+            "interface":"swd",
+            "device":"STM32F446RE",
+            "internalConsoleOptions":"openOnFirstSessionStart",
+            // "preLaunchTask":"Build",
+            "showDevDebugOutput":"both"
+        }
+    ]
+}
