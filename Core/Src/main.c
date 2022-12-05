@@ -58,7 +58,11 @@ static void MX_ADC1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+int _write(int fd, char * buf, int len)
+{
+  HAL_UART_Transmit(&huart2, buf, len, 100);
+  return len;
+}
 /* USER CODE END 0 */
 
 /**
@@ -101,6 +105,7 @@ int main(void)
   {
     HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
     HAL_Delay(1000);
+    printf("Hello from printf\n\r");
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
